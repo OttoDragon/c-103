@@ -7,9 +7,9 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 
-from_dir = “C:/Users/tvgge/OneDrive/Área de Trabalho”
+from_dir = "C:/Users/tvgge/OneDrive/Área de Trabalho"
 
-class fileEventHandler(FileSystemEventHandler)
+class fileEventHandler(FileSystemEventHandler):
     
     def on_created(self, event):
         print(f'ola, {event.src_path} foi criado!')
@@ -18,7 +18,7 @@ class fileEventHandler(FileSystemEventHandler)
         print(f'opa! Alguém excluiu {event.src_path}!')
 
 
-event_handler = FileMovementHandler()
+event_handler = FileEventHandler()
 
 observer = Observer()
 
